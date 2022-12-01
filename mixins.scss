@@ -1,159 +1,161 @@
-
 //Para quitar bordes
-@mixin zero-clean{
+@mixin zero-clean {
     margin: 0 0 0 0; // arriba derecha abajo izquierda
-    padding:0 0 0 0;
+    padding: 0 0 0 0;
     border-radius: 0 0 0 0;
-    border:0;
-    outline:0; // borde de color en formilarios     
-    }
-    
-    
-    @mixin clean-links{
+    border: 0;
+    outline: 0; // borde de color en formilarios     
+}
+
+
+@mixin clean-links {
+    color: inherit;
+    text-decoration: none;
+
+    a:hover,
+    a:focus,
+    a:visited {
+        // hover-> "mouse por ensima" focus-> "" visitado-> "página visitada"
         color: inherit;
         text-decoration: none;
-    
-        a:hover, a:focus, a:visited{ // hover-> "mouse por ensima" focus-> "" visitado-> "página visitada"
-        color: inherit;
-        text-decoration: none;
-        outline:0;
+        outline: 0;
         box-shadow: 0;
     }
-    }
-    
-    @mixin clean-text{
-    -webkit-margin-before: 0!important;
-    -webkit-margin-after: 0!important;
-    -webkit-margin-start: 0!important;
-    -webkit-margin-end: 0!important;
-    -webkit-padding-before: 0!important;
-    -webkit-padding-after: 0!important;
-    -webkit-padding-start: 0!important;
-    -webkit-padding-end: 0!important;
-    }
-    
-    
-    @mixin clean-ul-li{
+}
+
+@mixin clean-text {
+    -webkit-margin-before: 0 !important;
+    -webkit-margin-after: 0 !important;
+    -webkit-margin-start: 0 !important;
+    -webkit-margin-end: 0 !important;
+    -webkit-padding-before: 0 !important;
+    -webkit-padding-after: 0 !important;
+    -webkit-padding-start: 0 !important;
+    -webkit-padding-end: 0 !important;
+}
+
+
+@mixin clean-ul-li {
     list-style: none;
     list-style-image: none;
     list-indent: 0;
     list-style-type: none;
     list-style-position: outside;
     padding-inline-start: 0px;
-    margin-block-start: 0!important;
-    margin-block-end: 0!important;
-    }
-    
-    //POSICIONES
-    @mixin flex-col-center{
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+//POSICIONES
+@mixin flex-col-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-    }
-    
-    @mixin flex-row-center{
+}
+
+@mixin flex-row-center {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
-    }
-    
-    @mixin flex-row-end{
+}
+
+@mixin flex-row-end {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-content: center;
-    }
-    
-    //TEXTOS
-    @mixin texto_menu{
-    font: {
-    color:$color-1;
-    size: 14px;
-    weight: 400;
-    family: 'Mulish', sans-serif;
-    }
-    }
+}
 
-    @mixin texto_cajaazul{
-        font: {
+//TEXTOS
+@mixin texto_menu {
+    font: {
+        color: $color-1;
+        size: 14px;
+        weight: 400;
+        family: 'Mulish', sans-serif;
+    }
+}
+
+@mixin texto_cajaazul {
+    font: {
         align-content: center;
         text-align: center;
-        color:$color-tr1;
+        color: $color-tr1;
         size: 24px;
         weight: 200;
         family: 'Mulish', sans-serif;
-        }
-        }
+    }
+}
 
 //Mulish regular 36
-@mixin texto_titulos{
-font: {
-size: 36px;
-weight: 400;
-family: 'Mulish', sans-serif;
-}
+@mixin texto_titulos {
+    font: {
+        size: 36px;
+        weight: 400;
+        family: 'Mulish', sans-serif;
+    }
 }
 
 //Mulish regular 18
-@mixin texto_ordinario{
-font: {
-size: 18px;
-weight: 200;
-family: 'Mulish', sans-serif;
-}
+@mixin texto_ordinario {
+    font: {
+        size: 18px;
+        weight: 200;
+        family: 'Mulish', sans-serif;
+    }
 }
 
 //Mulish regular 24
-@mixin texto_ordinario_dos{
-font: {
-size: 24px;
-weight: 200;
-family: 'Mulish', sans-serif;
-}
+@mixin texto_ordinario_dos {
+    font: {
+        size: 20px;
+        weight: 200;
+        family: 'Mulish', sans-serif;
+    }
 }
 
 //Mulish bold 24
-@mixin texto_link{
-font: {
-size: 24px;
-weight: 700;
-family: 'Mulish', sans-serif;
-}
+@mixin texto_link {
+    font: {
+        size: 24px;
+        weight: 700;
+        family: 'Mulish', sans-serif;
+    }
 }
 
 //Mulish bold 36
-@mixin texto_titulos_dos{
+@mixin texto_titulos_dos {
     font: {
-    size: 36px;
-    weight: 700;
-    family: 'Mulish', sans-serif;
+        size: 36px;
+        weight: 700;
+        family: 'Mulish', sans-serif;
     }
-    }
-    
+}
+
 //Mulish bold 18
-@mixin texto_caja_nombre_ref{
-font: {
-align-content: center;
-text-align: center;
-color:$color-tr1;
-size: 18px;
-weight: 700;
-family: 'Mulish', sans-serif;}
+@mixin texto_caja_nombre_ref {
+    font: {
+        align-content: center;
+        text-align: center;
+        color: $color-tr1;
+        size: 18px;
+        weight: 700;
+        family: 'Mulish', sans-serif;
+    }
 }
 
 
 
 //Mulish extralight 12
-@mixin texto_caja_texto_ref{
+@mixin texto_caja_texto_ref {
     font: {
-    align-content: center;
-    text-align: center;
-    color:$color-tr1;
-    size: 12px;
-    weight: 200;
-    family: 'Mulish', sans-serif;}
+        color: $color-tr1;
+        size: 14px;
+        weight: 200;
+        family: 'Mulish', sans-serif;
     }
+}

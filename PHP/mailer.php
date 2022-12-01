@@ -2,6 +2,9 @@
 <?php
   require_once("Exception.php");
   require_once("PHPMailer.php");
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   try {
     $mail = new PHPMailer();
 
@@ -13,31 +16,41 @@
 
       //Luego tenemos que iniciar la validación por SMTP:
       $mail->IsSMTP();
-      $mail->SMTPAuth = true;
-      //Si activas esto se mostrarán todos los logs de errores
-      //$mail->SMTPDebug = 2;
-      $from = "contacto@asesoriasmunoz.cl"; // Correo desde el cual se mandan las solicitudes
-      $mail->SMTPSecure = 'tls';
-      $mail->Host = "mail.asesoriasmunoz.cl"; // SMTP a utilizar. Por ej. smtp.elserver.com
-      $mail->Username = $from; // Correo completo a utilizar
-      $mail->Password = "UxE@XYG8aupp"; // Contraseña
-      $mail->Port = 587; // Puerto a utilizar
-      $mail->AddReplyTo($_POST['email'], $_POST['name']);
-      $mail->SetFrom($from, $_POST['name'], $_POST['name']);
-      $mail->AddAddress("cesar@asesoriasmunoz.cl"); // Destinatario, debe ser el correo del cliente al cual recibe las solicitudes
-      $mail->IsHTML(false); // El correo se envía como HTML
-      $mail->Subject = "Correo desde mi sitio web www.asesoriasmunoz.cl"; // Este es el titulo del email.
-      $body =  "Nombre: " . $name . "\n\n" .
-        "Email: " . $email . "\n\n" .
-        "Mensaje: " . $user_message ;
-      $mail->Body = $body; // Mensaje a enviar
-      $exito = $mail->Send(); // Envía el correo.
+      try {
+        $mail->SMTPAuth = true;
+        //Si activas esto se mostrarán todos los logs de errores
+        //$mail->SMTPDebug = 2;
+        $from = "contacto@asesoriasmunoz.cl"; // Correo desde el cual se mandan las solicitudes
+        $mail->SMTPSecure = 'tls';
+        $mail->Host = "mail.asesoriasmunoz.cl"; // SMTP a utilizar. Por ej. smtp.elserver.com
+        $mail->Username = $from; // Correo completo a utilizar
+        $mail->From = $from;
+        // $mail->SMTPDebug = 2; // Para Debug
+        $mail->Password = 'claveSegurade$mtp.'; // Contraseña
+        $mail->Port = 587; // Puerto a utilizar
+        $mail->AddReplyTo($_POST['email'], $_POST['name']);
+        $mail->SetFrom($from, $_POST['name'], $_POST['name']);
+        $mail->AddAddress("cesar@asesoriasmunoz.cl"); // Destinatario, debe ser el correo del cliente al cual recibe las solicitudes
+        $mail->AddAddress("sebastian@asesoriasmunoz.cl");
+        $mail->AddAddress("munoz.cf@gmail.com");
+        $mail->IsHTML(false); // El correo se envía como HTML
+        $mail->Subject = "Correo desde mi sitio web www.asesoriasmunoz.cl"; // Este es el titulo del email.
+        $body =  "Nombre: " . $name . "\n\n" .
+          "Email: " . $email . "\n\n" .
+          "Mensaje: " . $user_message ;
+        $mail->Body = $body; // Mensaje a enviar
+        $exito = $mail->Send(); // Envía el correo.
+        echo 
+          '<script type="text/javascript">
+            alert("Mensaje enviado");
+            location.replace("https://www.asesoriasmunoz.cl/");
+          </script>';
+      }catch (phpmailerException $e) {
+        echo    $e->errorMessage(); //Pretty error messages from PHPMailer
+      }
+      
     }
-    echo 
-        '<script type="text/javascript">
-          alert("Mensaje enviado");
-          location.replace("https://www.asesoriasmunoz.cl/");
-        </script>';
+    
   } catch (Exception $e) {
       echo $e->errorMessage(); //Pretty error messages from PHPMailer
   } catch (\Exception $e) { //The leading slash means the Global PHP Exception class will be caught

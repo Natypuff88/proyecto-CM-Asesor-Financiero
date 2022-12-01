@@ -11,69 +11,82 @@
 /////////////////////////////////
 
 body {
-    @include zero-clean;
-    box-sizing: border-box; //incluye los bordes y paddings en el alto y ancho -> no como un adicional
+  @include zero-clean;
+  box-sizing: border-box; //incluye los bordes y paddings en el alto y ancho -> no como un adicional
 }
 
-h1, h2, h3, h4, h5, h6 p {
-@include clean-text;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 p {
+  @include clean-text;
 }
 
 
-a:link, a:visited, a:active {
-text-decoration:none;
-list-style-type: none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 li {
-@include clean-links;
-@include clean-text;
+  @include clean-links;
+  @include clean-text;
 }
 
 
 
 /////// NAVBAR ///////
 
-.logocm{ 
-width: 160px;
-height: auto;    
-}
-
-nav ul li{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    @media(min-width: 0px) and (max-width:767px)   // celular
-    {justify-content: center;}
+.logocm {
+  width: 160px;
+  height: auto;
 }
 
 nav ul li {
-    @include clean-links;
-    @include clean-text;
-    @include flex-row-center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    justify-content: center;
+  }
 }
 
-nav ul a{
-    @include clean-links;
-    @include clean-text;
-    @include flex-row-center;
+nav ul li {
+  @include clean-links;
+  @include clean-text;
+  @include flex-row-center;
 }
 
-nav ul p{
-    @include clean-links;
-    @include clean-text;
-    @include flex-row-center;
+nav ul a {
+  @include clean-links;
+  @include clean-text;
+  @include flex-row-center;
 }
 
-nav li {   
-@media(min-width: 0px) and (max-width:767px)   // celular
-{margin:10px;}
+nav ul p {
+  @include clean-links;
+  @include clean-text;
+  @include flex-row-center;
 }
 
-nav .texto-menu{ 
-color:$color-1;
-@include texto_menu;   
+nav li {
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    margin: 10px;
+  }
+}
+
+nav .texto-menu {
+  color: $color-1;
+  @include texto_menu;
 }
 
 
@@ -81,240 +94,363 @@ color:$color-1;
 /////// MAINMENU ///////
 
 
-.boxmainmanu2{ 
-background-image: url("./Assets/Imagenes/MainMenu/FONDO.jpg");
-height: 1000px;
-width: 100%;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-display: flex;
-flex-direction: row;
-justify-content: center;
+.boxmainmanu2 {
+  /* background-image: url("./Assets/Imagenes/MainMenu/FONDO.jpg");*/
+  height: 600px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.imagenmain{
-height: 2000px;
-position: absolute; 
-@media(min-width: 768px) and (max-width:1024px)   // celular
-{height: 1000px;} 
-@media(min-width: 0px) and (max-width:767px)   // celular
-{height: 500px;} 
+.imagenmain {
+  height: 2000px;
+  position: absolute;
+  @media(min-width: 768px) and (max-width:1024px) // celular
+
+    {
+    height: 1000px;
+  }
+
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    height: 500px;
+  }
 }
 
-.cajaazul{ 
-@include flex-row-center;
-background-color: $color-2;
-height: 200px;
-width: 400px;
-position: relative;  
-margin-top: 20%;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-@media(min-width: 0px) and (max-width:767px)   // celular
-{margin-top: 60%;}
+.cajaazul {
+  background-color: #2E3A73;
+  @include flex-row-center;
+  background-color: $color-2;
+  height: 200px;
+  width: 400px;
+  position: relative;
+  margin-top: 20%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    margin-top: 60%;
+  }
 }
 
-.textocajaazul{ 
-@include texto_cajaazul;
-align-content: center;
-text-align: center;
-color: $color-tr1;
+.textocajaazul {
+  @include texto_cajaazul;
+  align-content: center;
+  text-align: center;
+  color: $color-tr1;
 }
 
 
 /////// SOBRE MI ///////
 
-.boxsobremi{ 
-background-color: $color-2;
+.boxsobremi {
+  background-color: $color-2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.texto-titulos{ 
-color: $color-tr1;
-@include texto_titulos;
+.texto-titulos {
+  color: $color-tr1;
+  @include texto_titulos;
 }
 
-.texto-ordinario{ 
-color: $color-tr1;
-@include texto_ordinario;
+.texto-ordinario {
+  color: $color-tr1;
+  @include texto_ordinario;
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    text-align: justify;
+  }
+
 }
 
 .boxsobremi a {
-    @include clean-links;
-    @include clean-text;
+  @include clean-links;
+  @include clean-text;
 }
 
-.boxlinkedin{
-@include flex-row-end;
+.boxlinkedin {
+  @include flex-row-end;
 }
 
-.texto-link{
-color: $color-tr1; 
-@include texto_link;
+.texto-link {
+  color: $color-tr1;
+  @include texto_link;
 }
 
 /////// FRASE ///////
 
-.boxfrase{ 
-background-color: $color-4;
+.boxfrase {
+  width: 65%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: $color-4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @media(min-width: 0px) and (max-width:767px) // celular
+
+    {
+    margin-top: 60%;
+  }
 }
 
-.texto-frase-motivacion{ 
-color: $color-tr1; 
-font: {
-size: 24px;
-weight: 200;
-family: 'Mulish', sans-serif;
-    }
+.texto-frase-motivacion {
+  color: $color-tr1;
+
+  font: {
+    size: 24px;
+    weight: 200;
+    family: 'Mulish', sans-serif;
+  }
 }
 
 /////// SERVICIOS ///////
 
-.boxservicios{ 
-background-color: $color-tr1;
+.boxservicios {
+  background-color: $color-tr1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.cajatituloservicios{ 
-width: 100%;
-padding-bottom: 100px;
-}
-
-
-.texto-titulos-dos{
-@include texto_titulos_dos;
-}
-
-.texto-ordinario-dos{
-height: 100px;
-@include texto_ordinario_dos;
-@media(min-width: 768px) and (max-width:1024px)   // celular
-{height: 50px; 
-font-size: 12px;}
-
-}
-
-.tamañoservicio{
-height: 160px;
-width: 160px;
-}
-
-.caja-lineazul{
-@include flex-row-center;
-width: 100vw;
-background-color: $color-tr1;
+.cajatituloservicios {
+  width: 100%;
 }
 
 
-.lineazul{
-@include flex-row-center;
-background-color: $color-1;
-height: 4px;
-width: 1000px;
+.texto-titulos-dos {
+  @include texto_titulos_dos;
+}
+
+.texto-ordinario-dos {
+  height: 100px;
+  @include texto_ordinario_dos;
+  @media(min-width: 768px) and (max-width:1024px) // celular
+
+    {
+    height: 50px;
+    font-size: 12px;
+  }
+
+}
+
+.tamañoservicio {
+  height: 100px;
+  width: 100px;
+}
+
+.caja-lineazul {
+  @include flex-row-center;
+  width: 100vw;
+  /*background-color: $color-tr1;*/
+}
+
+
+.lineazul {
+  @include flex-row-center;
+  /*background-color: $color-1;*/
+  height: 4px;
+  width: 1000px;
 }
 
 /////// ARTICULOS ///////
 
-.boxarticulos{ 
-    background-color: $color-tr1;
-    }
+.boxarticulos {
+  background-color: $color-tr1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-.leermas { 
-color: $color-1; 
-font: {
-size: 20px;
-weight: 200;
-family: 'Mulish', sans-serif;
-    }
-}   
+.leermas {
+  color: $color-1;
 
-.boxleermás { 
-@include flex-row-end;
-} 
+  font: {
+    size: 20px;
+    weight: 200;
+    family: 'Mulish', sans-serif;
+  }
+}
 
-.boxleermás  p {
-text-decoration: underline;
+.boxleermas {
+  margin-top: 10px;
+  justify-content: center;
+
+  @media(min-width: 368px) and (max-width:768px) // tablet
+
+    {
+    margin-top: 35%;
+  }
+
+}
+
+.boxleermas p {
+  text-decoration: underline;
 }
 
 
 /////// REFERENCIAS ///////
 
-.cajaimagenref{ 
- @include flex-row-center;
-width: 400px;
-height: auto;
-@media(min-width: 768px) and (max-width:1400px)   // tablet
-{width: 160px;
-margin: 20px;
-}
-}
+.cajaimagenref {
 
-.cajanombreref{ 
-display: block;
-width: 400px;
-height: 50px;
-@media(min-width: 768px) and (max-width:1400px)   // tablet
-{width: 150px;
-height: 20px;
-margin: 20px;}
-}
+  @include flex-row-center;
+  width: 400px;
+  height: auto;
+  @media(min-width: 360px) and (max-width:767px) // tablet
 
-.cajacargoref{ 
-display: block;
-width: 400px;
-height: 80px;
-@media(min-width: 768px) and (max-width:1400px)   // tablet
-{width: 150px;
-height: 70px;
-margin: 20px;}
+    {
+    margin: 0px !important;
+    width: 100% !important;
+  }
+  @media(min-width: 768px) and (max-width:1400px) // tablet
+
+    {
+    margin: 0px !important;
+    width: 100% !important;
+    padding: 20px;
+  }
 }
 
-.cajatextoref{ 
-display: block;
-width: 400px;
-height: auto;
-margin-bottom: 100px;
-@media(min-width: 768px) and (max-width:1400px)   // tablet
-{width: 150px;
-height: 450px;
-margin: 20px;}
+.cajanombreref {
+  display: block;
+  height: 50px;
+  @media(min-width: 368px) and (max-width:1400px) // tablet
+
+    {
+    width: 150px;
+    margin: 20px;
+  }
 }
 
-.textocajanombreref{ 
-@include texto_caja_nombre_ref;
-color: $color-1;
+.cajacargoref {
+  display: block;
+  padding: 10px;
+  text-align: justify;
+  @media(min-width: 768px) and (max-width:1023px) // tablet
+
+    {
+    width: 70%;
+    margin-bottom: 30px !important;
+
+  }
+
+  @media(min-width: 360px) and (max-width:767px) // tablet
+
+    {
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+
+  }
+}
+
+.cajatextoref {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: justify;
+  @media(min-width: 768px) and (max-width:1023px) // tablet
+
+    {
+    width: 70%;
+    margin-bottom: 30px;
+
+  }
+
+  @media(min-width: 360px) and (max-width:767px) // tablet
+
+    {
+    margin-top: 30px !important;
+
+  }
+}
+
+.textocajanombreref {
+  @include texto_caja_nombre_ref;
+  color: $color-1;
 }
 
 
-.textocajacargoref{ 
-@include texto_ordinario;
-color: $color-1;
-@media(min-width: 768px) and (max-width:1400px)   // tablet
-{font-size: 14px;}
+.textocajacargoref {
+  @include texto_ordinario;
+  color: $color-1;
+  width: 90%;
+  height: 40px;
+  @media(min-width: 360px) and (max-width:1400px) // tablet
+
+    {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 
-.textocajantextoref{ 
-@include texto_caja_texto_ref;
-color: $color-1;
+.textocajantextoref {
+  @include texto_caja_texto_ref;
+  color: $color-1;
+  @media(min-width: 360px) and (max-width:1400px) // tablet
+
+    {
+    margin-top: 10%;
+  }
 }
 
-.boxformulario{ 
-background-color: $color-4;
+.boxformulario {
+  background-color: $color-4;
 }
 
-.texto-titulos-formulario{ 
-    @include texto_titulos;
-    color: $color-tr1;
-    }
-
-.texto-subtitulos-formulario{ 
-@include texto_caja_nombre_ref;
-color: $color-tr1;
+.texto-titulos-formulario {
+  @include texto_titulos;
+  color: $color-tr1;
 }
 
-.img-contacto{ 
-background-image: url(./Assets/Imagenes/Otros/contacto.jpg);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-height: 600px;
+.texto-subtitulos-formulario {
+  @include texto_caja_nombre_ref;
+  color: $color-tr1;
 }
 
+.img-contacto {
+  background-image: url(./Assets/Imagenes/Otros/contacto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 600px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("./Assets/Imagenes/MainMenu/FONDO.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.frase-container {
+  @media(min-width: 368px) and (max-width:1400px) // tablet
+
+    {
+    width: 100%;
+    padding: 5px !important;
+  }
+}
+
+.texto-descripcion-servicio {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+}
